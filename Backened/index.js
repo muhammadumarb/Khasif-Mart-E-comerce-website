@@ -18,10 +18,17 @@ const Order = require('./router/Order')
 
 
 app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "https://khasif-ecomerce-by-umar-bhatti.netlify.app"
-    ],
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true);
+        if (
+            origin === "http://localhost:5173" ||
+            /^https:\/\/.*--khasif-ecomerce-by-umar-bhatti\.netlify\.app$/.test(origin) ||
+            origin === "https://khasif-ecomerce-by-umar-bhatti.netlify.app"
+        ) {
+            return callback(null, true);
+        }
+        return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true
 }));
 app.use(express.json())
