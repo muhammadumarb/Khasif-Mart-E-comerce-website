@@ -18,8 +18,10 @@ const Order = require('./router/Order')
 
 
 app.use(cors({
-    origin: 
+    origin: [
         "http://localhost:5173",
+        "https://khasif-ecomerce-by-umar-bhatti.netlify.app"
+    ],
     credentials: true
 }));
 app.use(express.json())
