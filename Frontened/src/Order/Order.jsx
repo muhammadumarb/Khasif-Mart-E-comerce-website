@@ -37,7 +37,7 @@ console.log("IS ARRAY:", Array.isArray(cart));
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:4000/order/order",
+        "https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/order/order",
         {
           address,
           username:user?.name,

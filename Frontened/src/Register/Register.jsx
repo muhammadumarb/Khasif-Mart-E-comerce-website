@@ -23,7 +23,7 @@ const Register =() => {
    const handleSubmit = async(e)=>{
     e.preventDefault()
     try{
-       const respones = await axios.post("http://localhost:4000/api/auth/register",
+       const respones = await axios.post("https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/api/auth/register",
         {email,password,name},
        )
        setData(respones.data)

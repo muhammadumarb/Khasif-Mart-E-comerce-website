@@ -18,7 +18,7 @@ const Context = ({ children }) => {
   const getCart = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:4000/card/card",
+      "https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/card/card",
       {
         withCredentials: true,
       }
@@ -34,7 +34,7 @@ useEffect(() => {
 }, []);
 
    const SearchProduct = async ()=>{
-  const response = await axios.get(`http://localhost:4000/product/product/search?search=${search}`)
+  const response = await axios.get(`https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/product/product/search?search=${search}`)
 
   console.log(response.data)
   setData(response.data.Product)
@@ -44,7 +44,7 @@ useEffect(() => {
     const handleClick = async (id) => {
            try {
                const response = await axios.post(
-                   "http://localhost:4000/card/card",
+                   "https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/card/card",
                    {
                        productId: id,
                        quantity: 1
@@ -68,7 +68,7 @@ useEffect(() => {
    const getCurrentUser = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/auth/me",
+      "https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/api/auth/me",
       {
         withCredentials: true
       }

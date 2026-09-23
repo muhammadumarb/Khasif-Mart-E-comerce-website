@@ -16,7 +16,7 @@ const Category = () => {
 
     const getCategory =  async()=>{
         try{
-            const response = await axios.get("http://localhost:4000/category/category")
+            const response = await axios.get("https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/category/category")
             setCategory(response.data.category)
             console.log(response.data);
 

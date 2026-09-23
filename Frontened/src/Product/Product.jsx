@@ -29,7 +29,7 @@ const Product = () => {
     // }
     const getProduct = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/product/product')
+            const response = await axios.get('https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/product/product')
             setProduct(response.data.product)
             console.log(response.data);
 
@@ -42,7 +42,7 @@ const Product = () => {
     const getProductsByCategory = async (categoryName) => {
         try {
             const response = await axios.get(
-                `http://localhost:4000/product/product/category/${categoryName}`
+                `https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/product/product/category/${categoryName}`
             )
             setProduct(response.data.product)
             console.log(response.data);
@@ -62,7 +62,7 @@ const Product = () => {
     }, [categoryParam])
     const getProductById = async () => {
         try {
-            const response = await axios.get(`http://localhost:4000/product/product/${id}`,)
+            const response = await axios.get(`https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/product/product/${id}`,)
             setData(response.data)
         } catch (err) {
             console.log(err);
@@ -70,7 +70,7 @@ const Product = () => {
     }
     const getUpdateProduct = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/product/product/${id}`,)
+            const response = await axios.put(`https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/product/product/${id}`,)
             setData(response.data)
         } catch (err) {
             console.log(err);
@@ -78,7 +78,7 @@ const Product = () => {
     }
     const getDeleteProduct = async () => {
         try {
-            const response = await axios.delete(`http://localhost:4000/product/product/${id}`,)
+            const response = await axios.delete(`https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/product/product/${id}`,)
             setData(response.data)
         } catch (err) {
             console.log(err);

@@ -29,7 +29,7 @@ const Cart = () => {
     try {
     
       const response = await axios.get(
-        "http://localhost:4000/card/card",
+        "https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/card/card",
         {
           withCredentials: true,
         }
@@ -52,7 +52,7 @@ const Cart = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:4000/card/card/${id}`,
+        `https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/card/card/${id}`,
         {
            productId: id,
           quantity,
@@ -78,7 +78,7 @@ const Cart = () => {
 const removeItem = async (productId) => {
   try {
     const response = await axios.delete(
-      `http://localhost:4000/card/card/${id}`,
+      `https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/card/card/${id}`,
       {
         data: {
           productId: productId,

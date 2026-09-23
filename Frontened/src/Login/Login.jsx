@@ -29,7 +29,7 @@ const Login = () => {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:4000/api/auth/login",
+        "https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/api/auth/login",
         {
           email,
           password,
