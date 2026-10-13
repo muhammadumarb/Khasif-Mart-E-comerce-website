@@ -11,7 +11,7 @@ exports.createOder = async (req, res) => {
     // JWT se user id
     const userId = req.user.id;
 
-    // User find
+
     const user = await authmodel.findById(userId);
 
     if (!user) {
@@ -20,7 +20,6 @@ exports.createOder = async (req, res) => {
       });
     }
 
-    // Cart find
     const card = await cart.findOne({ user: userId });
 
     if (!card) {
@@ -29,14 +28,13 @@ exports.createOder = async (req, res) => {
       });
     }
 
-    // Cart empty check
+  
     if (!card.items || card.items.length === 0) {
       return res.status(400).json({
         mess: "Cart is Empty",
       });
     }
 
-    // Order items
     const orderItems = [];
 
     let totalAmount = 0;
@@ -63,7 +61,7 @@ exports.createOder = async (req, res) => {
       });
     }
 
-    // ONE order create
+   
     const order = await Ordermodel.create({
       user: userId,
       items: orderItems,
@@ -73,11 +71,11 @@ exports.createOder = async (req, res) => {
       totalAmount,
     });
 
-    // Cart empty
+   
     card.items = [];
     await card.save();
 
-    console.log("=== EMAIL DEBUG ===");
+   
 console.log("user.email:", user.email);
 console.log("ADMIN_EMAIL:", process.env.ADMIN_EMAIL);
     // User email

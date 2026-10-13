@@ -58,7 +58,6 @@ exports.getproductSearch = async (req, res) => {
         $options: "i"
       };
     }
-console.log("QUERY:", query);
     const Product = await products.find(query);
 
     res.status(200).json({

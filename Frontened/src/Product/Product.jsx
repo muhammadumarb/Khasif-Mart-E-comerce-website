@@ -53,10 +53,8 @@ const Product = () => {
     
     useEffect(() => {
         if (categoryParam) {
-            // came here from a category click -> 
             getProductsByCategory(categoryParam)
         } else {
-            // came here from navbar -> /product (show everything)
             getProduct()
         }
     }, [categoryParam])
