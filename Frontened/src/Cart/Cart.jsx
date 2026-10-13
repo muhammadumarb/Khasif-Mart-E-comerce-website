@@ -22,9 +22,6 @@ const Cart = () => {
 
   const { setCount } = useContext(Ecomerce);
 
-  // =========================
-  // GET CART
-  // =========================
   const getCart = async () => {
     try {
     
@@ -44,9 +41,7 @@ const Cart = () => {
     } 
   };
 
-  // =========================                                       
-  // UPDATE QUANTITY
-  // =========================
+ 
   const updateQuantity = async (id, quantity) => {
     if (quantity < 1) return;
 
@@ -72,9 +67,6 @@ const Cart = () => {
     }
   };
 
-  // =========================
-  // DELETE ITEM
-  // =========================
 const removeItem = async (productId) => {
   try {
     const response = await axios.delete(
@@ -104,9 +96,7 @@ const removeItem = async (productId) => {
     getCart();
   }, []);
 
-  // =========================
-  // TOTAL
-  // =========================
+               //Total 
   const subtotal = cart.reduce(
     (total, item) =>
       total +
@@ -125,7 +115,7 @@ const removeItem = async (productId) => {
   return (
     <div className="cart-page">
 
-      {/* ================= HEADER ================= */}
+  
       <div className="cart-heading">
         <div>
           <h1>Shopping Cart</h1>
@@ -138,7 +128,7 @@ const removeItem = async (productId) => {
       </div>
 
 
-      {/* ================= EMPTY CART ================= */}
+    
 
       {cart.length === 0 ? (
 
@@ -163,7 +153,7 @@ const removeItem = async (productId) => {
 
         <div className="cart-layout">
 
-          {/* ================= PRODUCTS ================= */}
+        
 
           <div className="cart-products">
 
@@ -283,7 +273,7 @@ const removeItem = async (productId) => {
           </div>
 
 
-          {/* ================= ORDER SUMMARY ================= */}
+         
 
           <div className="order-summary">
 
