@@ -10,9 +10,6 @@ const Order = () => {
 
   const { user,setCart, cart,setCount } = useContext(Ecomerce);
   console.log("user",user);
-  
-console.log("CART:", cart);
-console.log("IS ARRAY:", Array.isArray(cart));
 
   const [address, setAddress] = useState("");
   const [number,setNumber] = useState("")
