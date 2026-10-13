@@ -16,17 +16,7 @@ const Product = () => {
 
     const  {handleClick}  = useContext(Ecomerce);
     
-    // const AddProduct = async () => {
-    //     try {
-            
-    //         const response = await axios.post('http://localhost:4000/product/product',
-    //             { name, price, description, stock, category, }
-    //         )
-    //         setData(response.data)
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // }
+
     const getProduct = async () => {
         try {
             const response = await axios.get('https://khasifmartecomercewebsite1-okf5fcgf.b4a.run/product/product')
@@ -37,8 +27,6 @@ const Product = () => {
             console.log(err);
         }
     }
-    
-    // Fetch only products that belong to the clicked category
     const getProductsByCategory = async (categoryName) => {
         try {
             const response = await axios.get(
